@@ -1,0 +1,37 @@
+.filters {
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 10px 10px 10px;
+  border-radius: 12px;
+}
+
+.filters > span {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .filters {
+    display: table-cell;
+    margin-top: -40px;
+    width: 40%;
+  }
+
+  .filters > span {
+    font-size: 18px;
+    padding-bottom: 5px;
+    display: block;
+  }
+
+  .filters__title {
+    margin-right: 1rem;
+  }
+
+  .filter__btnClearFilters {
+    display: block;
+    float: right;
+  }
+}

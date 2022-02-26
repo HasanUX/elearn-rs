@@ -1,0 +1,146 @@
+.navbar__logoLink {
+  text-decoration: none;
+}
+
+.navbar__outSideCart {
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+.navbar__searchFormDesktopDiv {
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__cartDiv {
+    display: none;
+  }
+  .navbar__searchFormDesktopDiv {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar__searchFormMobileDiv {
+    display: none;
+  }
+  .navbar__outSideCart {
+    display: none;
+  }
+}
+
+.navbar__badgeText {
+  color: var(--white);
+  margin-left: 25px;
+  margin-right: 5px;
+}
+
+.navbar__badgeIcon {
+  color: var(--white);
+  font-size: 36px;
+}
+
+.navbar__outSideCartIcon {
+  position: relative;
+  font-size: 36px;
+  color: var(--yellow);
+  border-radius: 3px;
+  padding: 2px 4px 2px 4px;
+}
+
+.navbar__outSideCartCount {
+  position: absolute;
+  top: 10px;
+  /*right: 20px;*/
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 13px;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.navbar__cartDiv {
+  position: relative;
+  padding-right: 15px;
+}
+
+.navbar__cartDrowpDown {
+  display: flex;
+  align-items: flex-end;
+}
+
+.navbar__badgeDiv {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__cartCount {
+  position: absolute;
+  top: 0px;
+  right: -5px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 13px;
+  background-color: var(--white);
+  text-align: center;
+}
+
+.navbar__cartIcon {
+  font-size: 36px;
+  color: var(--yellow);
+  border-radius: 3px;
+  padding: 2px 4px 2px 4px;
+}
+
+.navbar__cartLink {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 1rem;
+}
+
+.navbar__link {
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.navbar__dropDownMenu {
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  width: 20rem;
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.navbar__dropDownList {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+}
+
+.navbar__dropDownDeleteIcon {
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 22px;
+  color: var(--red);
+}
+
+.navbar__dropDownDeleteIcon:hover {
+  color: var(--black);
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown-menu[data-bs-popper] {
+  left: auto !important;
+  right: 0 !important;
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  box-shadow: none !important;
+}
