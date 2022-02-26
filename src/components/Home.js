@@ -59,7 +59,11 @@ function Home() {
   return (
     <Container fluid className="home__productContainer">
       <Row className="home__row">
-        <Col xs={12} md={3} className="home__col">
+        <div className="home__title text-center">
+          <h1 className="home__headTitle">Best courses</h1>
+        </div>
+
+        <Col xs={12} md={12} className="home__col">
           <Filters />
         </Col>
         {transformProducts().map((prod) => (

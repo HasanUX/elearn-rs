@@ -1,3 +1,11 @@
+.home__title {
+  margin-bottom: 3rem;
+}
+
+.home__headTitle {
+  font-size: 52px;
+}
+
 .home__col {
   margin-bottom: 1rem;
 }
