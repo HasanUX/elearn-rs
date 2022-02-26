@@ -45,9 +45,7 @@ function SingleProduct({ prod }) {
             <MdPhoneInTalk className="singleProduct__contactIcon" />
             <span className="singleProduct__contactNum">{prod.contact} </span>
           </Card.Text>
-          <p className="singleProduct__followerNum">
-            Followers: {prod.follower}
-          </p>
+          <p className="singleProduct__followerNum">$ {prod.follower}.00</p>
 
           <Stack direction="horizontal" gap={2}>
             <Card.Text className="singleProduct__address">
@@ -87,7 +85,7 @@ function SingleProduct({ prod }) {
               className="singleProduct__cartButton"
               onClick={removeHandler}
             >
-              Remove
+              Remove from cart
             </Button>
           ) : (
             <Button
@@ -96,7 +94,7 @@ function SingleProduct({ prod }) {
               className="singleProduct__cartButton"
               onClick={cartHandler}
             >
-              {prod.inStock ? "Add to favorite" : "Out now"}
+              {prod.inStock ? "Add to cart" : "Closed"}
             </Button>
           )}
         </Card.Body>

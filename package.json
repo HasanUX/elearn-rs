@@ -1,6 +1,6 @@
 {
   "homepage": "https://hasanux.github.io/elearn-rs/",
-  "name": "elearn",
+  "name": "elearn-rs",
   "version": "0.1.0",
   "private": false,
   "dependencies": {

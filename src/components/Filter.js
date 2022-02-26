@@ -57,7 +57,7 @@ const Filters = () => {
       <span>
         <Form.Check
           inline
-          label="I need home delivery"
+          label="Live class"
           name="group1"
           type="checkbox"
           id={`inline-3`}
@@ -72,7 +72,7 @@ const Filters = () => {
       <span>
         <Form.Check
           inline
-          label="Has parking space"
+          label="Certification program"
           name="group1"
           type="checkbox"
           id={`inline-4`}
@@ -97,7 +97,7 @@ const Filters = () => {
           style={{ cursor: "pointer" }}
         />
       </span>
-      <Button
+      {/*<Button
         className="filter__btnClearFilters"
         variant="light"
         onClick={() =>
@@ -107,7 +107,7 @@ const Filters = () => {
         }
       >
         Clear Filters
-      </Button>
+      </Button>*/}
     </div>
   );
 };

@@ -18,7 +18,7 @@ function Login() {
   return (
     <div className="login">
       <Link to="/" className="login__logo">
-        <h2>Reviewtify</h2>
+        <h2>Elearn</h2>
       </Link>
 
       <div className="login__container">
@@ -49,12 +49,12 @@ function Login() {
         </form>
 
         <p>
-          By continuing, you agree to Reviewtify's Conditions of Use and Privacy
+          By continuing, you agree to Rasuta's Conditions of Use and Privacy
           Notice.
         </p>
 
         <button className="login__registerButton" onClick={register}>
-          Create your Reviewtify account
+          Create your Rasuta account
         </button>
       </div>
     </div>
