@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/elearn-rs/static/css/main.d8aa76af.css",
-    "main.js": "/elearn-rs/static/js/main.9d403e1c.js",
+    "main.css": "/elearn-rs/static/css/main.597964bb.css",
+    "main.js": "/elearn-rs/static/js/main.1fb69fad.js",
+    "static/media/hero-banner-1.jpeg": "/elearn-rs/static/media/hero-banner-1.901aeb5ddd92cd74d04c.jpeg",
     "index.html": "/elearn-rs/index.html",
-    "main.d8aa76af.css.map": "/elearn-rs/static/css/main.d8aa76af.css.map",
-    "main.9d403e1c.js.map": "/elearn-rs/static/js/main.9d403e1c.js.map"
+    "main.597964bb.css.map": "/elearn-rs/static/css/main.597964bb.css.map",
+    "main.1fb69fad.js.map": "/elearn-rs/static/js/main.1fb69fad.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8aa76af.css",
-    "static/js/main.9d403e1c.js"
+    "static/css/main.597964bb.css",
+    "static/js/main.1fb69fad.js"
   ]
 }
