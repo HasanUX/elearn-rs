@@ -6,23 +6,17 @@ import { CartState } from "../context/Context";
 
 const Filters = () => {
   const {
-    productState: {
-      sort,
-      byHomeDelivery,
-      byParkingSpace,
-      byRating,
-      searchQuery,
-    },
+    productState: { sort, byLiveClass, byBeginner, byRating },
     productDispatch,
   } = CartState();
 
-  console.log(sort, byHomeDelivery, byParkingSpace, byRating);
+  //  console.log(sort, byLiveClass, byParkingSpace, byRating);
   // make state for rating
 
   return (
-    <div className="filters">
+    <div className="filters shadow-sm">
       {/*<span className="filters__title">Filter Choices</span>*/}
-      <span>
+      {/*<span>
         <Form.Check
           inline
           label="Paid"
@@ -53,7 +47,7 @@ const Filters = () => {
           }
           checked={sort === "highToLow" ? true : false}
         />
-      </span>
+      </span>*/}
       <span>
         <Form.Check
           inline
@@ -63,25 +57,25 @@ const Filters = () => {
           id={`inline-3`}
           onChange={() =>
             productDispatch({
-              type: "FILTER_BY_DELIVERY",
+              type: "FILTER_BY_LIVE_CLASS",
             })
           }
-          checked={byHomeDelivery}
+          checked={byLiveClass}
         />
       </span>
       <span>
         <Form.Check
           inline
-          label="Certification program"
+          label="Beginner"
           name="group1"
           type="checkbox"
           id={`inline-4`}
           onChange={() =>
             productDispatch({
-              type: "FILTER_BY_PARKING_SPACE",
+              type: "FILTER_BY_BEGINNER",
             })
           }
-          checked={byParkingSpace}
+          checked={byBeginner}
         />
       </span>
       <span>
@@ -97,8 +91,8 @@ const Filters = () => {
           style={{ cursor: "pointer" }}
         />
       </span>
-      {/*<Button
-        className="filter__btnClearFilters"
+      <Button
+        className="filter__btnClearFilters bg-dark text-white"
         variant="light"
         onClick={() =>
           productDispatch({
@@ -106,8 +100,8 @@ const Filters = () => {
           })
         }
       >
-        Clear Filters
-      </Button>*/}
+        See all courses
+      </Button>
     </div>
   );
 };

@@ -1,15 +1,11 @@
-import { Card, Button, Stack } from "react-bootstrap";
+import { useState } from "react";
+import { Card, Button } from "react-bootstrap";
 import Rating from "./Rating";
 import { CartState } from "../context/Context";
-import {
-  MdPhoneInTalk,
-  MdLocationPin,
-  MdDeliveryDining,
-  MdLocalParking,
-} from "react-icons/md";
-import { CgUnavailable } from "react-icons/cg";
-
+import { MdOutlineLiveTv, MdOutlineRecordVoiceOver } from "react-icons/md";
 import "./SingleProduct.css";
+import { Link } from "react-router-dom";
+
 function SingleProduct({ prod }) {
   const {
     state: { cart },
@@ -34,71 +30,60 @@ function SingleProduct({ prod }) {
 
   return (
     <div className="singleProduct">
-      <Card className="singleProduct__card">
-        <Card.Img variant="top" src={prod.image} />
-        <Card.Body>
-          <Card.Title className="singleProduct__name">{prod.name}</Card.Title>
-          <Card.Title className="singleProduct__type">
-            Type: {prod.suffix}
-          </Card.Title>
-          <Card.Text className="singleProduct__contact">
-            <MdPhoneInTalk className="singleProduct__contactIcon" />
-            <span className="singleProduct__contactNum">{prod.contact} </span>
-          </Card.Text>
-          <p className="singleProduct__followerNum">$ {prod.follower}.00</p>
+      <Link
+        to={`/course/${prod.id}/${prod.name}`}
+        className="singleProduct_link"
+      >
+        <Card className="singleProduct__card">
+          <Card.Img variant="top" src={prod.image} />
+          <Card.Body>
+            <h5 className="singleProduct__name">{prod.name}</h5>
+            <div className="singleProduct__author text-secondary">
+              {prod.findName}
+            </div>
+            {prod.beginner && (
+              <span className="badge bg-warning text-dark singleProduct__levelBadge">
+                Beginner
+              </span>
+            )}
+            {prod.liveClass ? (
+              <div className="singleProduct__liveClass">
+                <MdOutlineLiveTv />
+                <span> Live class </span>
+              </div>
+            ) : (
+              <div className="singleProduct__liveClass">
+                <MdOutlineRecordVoiceOver />
+                <span> Recorded class</span>
+              </div>
+            )}
+            <div className="singleProduct__rating">
+              <Rating rating={prod.ratings} />
+            </div>
+          </Card.Body>
+        </Card>
+      </Link>
+      <div className="singleProduct__priceBtnFlex">
+        <p className="singleProduct__price">$ {prod.price}</p>
 
-          <Stack direction="horizontal" gap={2}>
-            <Card.Text className="singleProduct__address">
-              <MdLocationPin className="singleProduct__addressIcon" />
-              <span className="singleProduct__addressText">{prod.address}</span>
-            </Card.Text>
-          </Stack>
-          {prod.homeDelivery ? (
-            <div className="mt-2">
-              <MdDeliveryDining />
-              <span> Home delivery available</span>
-            </div>
-          ) : (
-            <div className="mt-2">
-              <CgUnavailable />
-              <span> No home delivery</span>
-            </div>
-          )}
-
-          {prod.parkingSpace ? (
-            <div className="mt-3">
-              <MdLocalParking />
-              <span> Parking available</span>
-            </div>
-          ) : (
-            <div className="mt-3">
-              <MdLocalParking />
-              <span> No parking space</span>
-            </div>
-          )}
-          <div className="singleProduct__rating">
-            <Rating rating={prod.ratings} />
-          </div>
-          {cart.some((p) => p.id === prod.id) ? (
-            <Button
-              variant="danger"
-              className="singleProduct__cartButton"
-              onClick={removeHandler}
-            >
-              Remove from cart
-            </Button>
-          ) : (
-            <Button
-              variant={prod.inStock ? "primary" : "warning"}
-              disabled={!prod.inStock}
-              className="singleProduct__cartButton"
-              onClick={cartHandler}
-            >
-              {prod.inStock ? "Add to cart" : "Closed"}
-            </Button>
-          )}
-        </Card.Body>
-      </Card>
+        {cart.some((p) => p.id === prod.id) ? (
+          <Button
+            variant="secondary"
+            className="singleProduct__cartButton"
+            onClick={cartHandler}
+          >
+            Added to cart
+          </Button>
+        ) : (
+          <Button
+            variant="primary"
+            className="singleProduct__cartButton"
+            onClick={cartHandler}
+          >
+            Add to cart
+          </Button>
+        )}
+      </div>
     </div>
   );
 }

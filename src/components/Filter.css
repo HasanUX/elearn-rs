@@ -1,6 +1,6 @@
 .filters {
-  background-color: #343a40;
-  color: white;
+  background-color: #fdefef;
+  color: #222;
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -10,7 +10,13 @@
 
 .filters > span {
   font-size: 18px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
+}
+
+.filter__btnClearFilters {
+  font-size: 14px !important;
+  padding: 3px 9px !important;
+  margin-left: auto;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://hasanux.github.io/elearn-rs/",
+  "homepage": "https://elearn-rs.web.app/",
   "name": "elearn-rs",
   "version": "0.1.0",
   "private": false,
@@ -43,7 +43,6 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.0.0-alpha.6",
-    "gh-pages": "^3.2.3"
+    "@faker-js/faker": "^6.0.0-alpha.6"
   }
 }

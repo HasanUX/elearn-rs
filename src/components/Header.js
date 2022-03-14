@@ -1,8 +1,7 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import "./Header.css";
 import { MdShoppingCart, MdDelete } from "react-icons/md";
-
-import { HiBadgeCheck } from "react-icons/hi";
 
 import {
   Container,
@@ -30,7 +29,7 @@ function Header({ prod }) {
   //  };
 
   return (
-    <Navbar bg="dark" expand="lg" className="navbar">
+    <Navbar bg="dark" expand="lg" fixed="top" className="navbar">
       <Container fluid className="navbar__containerFLuid">
         <Link to="/" className="navbar__logoLink">
           <Navbar.Brand className="navbar__logo text-white">
@@ -88,7 +87,7 @@ function Header({ prod }) {
                 </div>
               </Dropdown.Toggle>
 
-              <Dropdown.Menu>
+              <Dropdown.Menu className="text-center">
                 <Link to="/favorites" className="navbar__cartLink">
                   Check favorites
                 </Link>
@@ -97,7 +96,7 @@ function Header({ prod }) {
                     <>
                       {cart.map((prod) => (
                         <div className="navbar__dropDownList" key={prod.id}>
-                          <p key={prod.id}>{prod.name}</p>
+                          <p>{prod.name}</p>
                           <MdDelete
                             className="navbar__dropDownDeleteIcon"
                             onClick={() => {
@@ -111,9 +110,26 @@ function Header({ prod }) {
                       ))}
                     </>
                   ) : (
-                    <Link to="/favorites" className="navbar__cartLink">
-                      favourite list is empty
+                    <Link
+                      to="/favorites"
+                      className="navbar__cartLink p-2 mb-4 text-black rounded"
+                    >
+                      Cart is empty
                     </Link>
+                  )}
+                  {cart.length > 0 && (
+                    <Button
+                      variant="danger"
+                      className="singleProduct__cartButton"
+                      onClick={() => {
+                        dispatch({
+                          type: "DELETE_ALL_FROM_CART",
+                          payload: prod,
+                        });
+                      }}
+                    >
+                      Delete all
+                    </Button>
                   )}
                 </div>
               </Dropdown.Menu>
@@ -125,7 +141,7 @@ function Header({ prod }) {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Link to="/" className="navbar__link text-white">
+            <Link to="/about" className="navbar__link text-white">
               About us
             </Link>
             <Link

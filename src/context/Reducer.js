@@ -15,6 +15,12 @@ export const cartReducer = (state, action) => {
         cart: state.cart.filter((c) => c.id !== action.payload.id),
       };
 
+    case "DELETE_ALL_FROM_CART":
+      return {
+        ...state,
+        cart: [],
+      };
+
     default:
       return state;
   }
@@ -24,18 +30,18 @@ export const productReducer = (state, action) => {
   switch (action.type) {
     case "SORT_BY_FOLLOWERS":
       return { ...state, sort: action.payload };
-    case "FILTER_BY_DELIVERY":
-      return { ...state, byHomeDelivery: !state.byHomeDelivery };
-    case "FILTER_BY_PARKING_SPACE":
-      return { ...state, byParkingSpace: !state.byParkingSpace };
+    case "FILTER_BY_LIVE_CLASS":
+      return { ...state, byLiveClass: !state.byLiveClass };
+    case "FILTER_BY_BEGINNER":
+      return { ...state, byBeginner: !state.byBeginner };
     case "FILTER_BY_RATING":
       return { ...state, byRating: action.payload };
     case "FILTER_BY_SEARCH":
       return { ...state, searchQuery: action.payload };
     case "CLEAR_FILTERS":
       return {
-        byStock: false,
-        byHomeDelivery: false,
+        byBeginner: false,
+        byLiveClass: false,
         byRating: 0,
         searchQuery: "",
       };

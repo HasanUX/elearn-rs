@@ -10,14 +10,12 @@ const Context = ({ children }) => {
   const products = [...Array(20)].map(() => ({
     id: faker.datatype.uuid(),
     name: faker.company.companyName(),
-    suffix: faker.company.bs(),
-    follower: faker.datatype.number({ min: 20, max: 200 }),
-    contact: faker.phone.phoneNumber(),
-    address: faker.address.streetName(),
+    findName: faker.name.findName(),
+    details: faker.commerce.productDescription(),
+    price: faker.commerce.price(),
     image: `${faker.image.nature()}?random=${Math.round(Math.random() * 1000)}`,
-    inStock: faker.random.arrayElement([0, 3, 5, 6, 7]),
-    homeDelivery: faker.datatype.boolean(),
-    parkingSpace: faker.datatype.boolean(),
+    liveClass: faker.datatype.boolean(),
+    beginner: faker.datatype.boolean(),
     ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
   }));
 
@@ -31,8 +29,8 @@ const Context = ({ children }) => {
   );
 
   const [productState, productDispatch] = useReducer(productReducer, {
-    byHomeDelivery: false,
-    byParkingSpace: false,
+    byLiveClass: false,
+    byBeginner: false,
     byRating: 0,
     searchQuery: "",
   });

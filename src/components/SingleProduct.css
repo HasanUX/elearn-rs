@@ -1,15 +1,22 @@
+.singleProduct {
+  border: 1px solid #ccc;
+  border-radius: 3px !important;
+}
+
 .singleProduct__card {
   width: 100%;
-  border-radius: 12px !important;
+  border: none !important;
   cursor: pointer;
   transition: all 0.1s ease-in;
+  position: relative;
+  z-index: -99;
 }
 
 .singleProduct__card img {
   height: 7rem;
   object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .singleProduct__card:hover {
@@ -17,36 +24,64 @@
   -webkit-box-shadow: rgba(82, 61, 61, 0.12) 0px 10px 30px;
 }
 
-.singleProduct__rating {
-  display: block;
-  margin-top: 15px;
+.singleProduct_link {
+  text-decoration: none;
+}
+
+.singleProduct__name {
   color: #222;
 }
 
-.singleProduct__contactIcon,
-.singleProduct__addressIcon {
-  margin-right: 5px;
-}
-
-.singleProduct__contactNum {
+.singleProduct__author {
   font-size: 14px;
 }
 
-.singleProduct__followerNum {
-  margin-bottom: 15px;
+.singleProduct__rating {
+  display: block;
+  margin-top: 0px;
+  color: #222;
+}
+
+.singleProduct__levelBadge {
+  position: absolute;
+  top: 5rem;
+  right: 0.5rem;
+  z-index: 999;
+}
+
+.singleProduct__liveClass span {
+  font-size: 12px;
+  color: #222;
+}
+
+.singleProduct__liveClass svg {
+  color: rgb(13, 87, 185);
+  margin-top: -2px;
+}
+
+.singleProduct__price {
+  margin-top: 5px;
+  margin-bottom: 0;
   font-weight: bold;
-}
-
-.singleProduct__adressText {
-  font-size: 14px;
-}
-
-.singleProduct__type {
-  font-style: italic;
-  font-size: 14px !important;
+  color: #222;
 }
 
 .singleProduct__cartButton {
   font-size: 14px !important;
-  margin-top: 15px;
+  /*margin-top: 5px;*/
+  background-color: rgb(13, 87, 185);
+}
+
+.singleProduct__priceBtnFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  z-index: 100;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .singleProduct__priceBtnFlex {
+    display: block;
+  }
 }

@@ -8,13 +8,7 @@ import Filters from "./Filter";
 function Home() {
   const {
     state: { products },
-    productState: {
-      sort,
-      byHomeDelivery,
-      byParkingSpace,
-      byRating,
-      searchQuery,
-    },
+    productState: { sort, byLiveClass, byBeginner, byRating, searchQuery },
   } = CartState();
 
   //  const cartHandler = () => {
@@ -33,12 +27,12 @@ function Home() {
       );
     }
 
-    if (byHomeDelivery) {
-      sortedProducts = sortedProducts.filter((prod) => prod.homeDelivery);
+    if (byLiveClass) {
+      sortedProducts = sortedProducts.filter((prod) => prod.liveClass);
     }
 
-    if (byParkingSpace) {
-      sortedProducts = sortedProducts.filter((prod) => prod.parkingSpace);
+    if (byBeginner) {
+      sortedProducts = sortedProducts.filter((prod) => prod.beginner);
     }
 
     if (byRating) {
@@ -67,7 +61,7 @@ function Home() {
           <Filters />
         </Col>
         {transformProducts().map((prod) => (
-          <Col xs={4} md={3} className="home__col" key={prod.id}>
+          <Col xs={6} md={3} className="home__col" key={prod.id}>
             <SingleProduct prod={prod} />
           </Col>
         ))}
